@@ -37,19 +37,15 @@
             if (Hls.isSupported()) {
                 var hls = new Hls(config);
                 var video = document.getElementById('video');
-
-                // bind them together
+                
                 hls.attachMedia(video);
-                // MEDIA_ATTACHED event is fired by hls object once MediaSource is ready
+
                 hls.on(Hls.Events.MEDIA_ATTACHED, function () {
                     console.log('video and hls.js are now bound together !');
                     hls.loadSource('https://multiplatform-f.akamaihd.net/i/multi/will/bunny/big_buck_bunny_,640x360_400,640x360_700,640x360_1000,950x540_1500,.f4v.csmil/master.m3u8')
                 });
             }
             else if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent) && !window.MSStream) {                
-                console.log('This is a IOS device')
-
-                var hls = new Hls(config);
                 var video = document.getElementById('video');
                 video.src = 'https://multiplatform-f.akamaihd.net/i/multi/will/bunny/big_buck_bunny_,640x360_400,640x360_700,640x360_1000,950x540_1500,.f4v.csmil/master.m3u8'
             };
