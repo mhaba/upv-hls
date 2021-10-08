@@ -23,14 +23,14 @@
         }
     </style>
 
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-    <script src="parameters.js"></script>
+    <script src="js/hls.js"></script>
+    <script src="js/parameters.js"></script>
 </head>
 <body>
     <div>
         <h1>HLS Player</h1>
         <div class=wrapper>
-            <video autoplay muted loop id="video"></video>
+            <video autoplay muted loop crossorigin="anonymous" id="video"></video>
         </div>
         
         <script>
@@ -42,12 +42,12 @@
 
                 hls.on(Hls.Events.MEDIA_ATTACHED, function () {
                     console.log('video and hls.js are now bound together !');
-                    hls.loadSource('https://multiplatform-f.akamaihd.net/i/multi/will/bunny/big_buck_bunny_,640x360_400,640x360_700,640x360_1000,950x540_1500,.f4v.csmil/master.m3u8')
+                    hls.loadSource('https://moneres.upv.es/hls-vod/tv/videos-web/presentacion-upv-2021.mp4.m3u8')
                 });
             }
             else if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent) && !window.MSStream) {                
                 var video = document.getElementById('video');
-                video.src = 'https://multiplatform-f.akamaihd.net/i/multi/will/bunny/big_buck_bunny_,640x360_400,640x360_700,640x360_1000,950x540_1500,.f4v.csmil/master.m3u8'
+                video.src = 'https://moneres.upv.es/vod/hls-vod/tv/videos-web/presentacion-upv-2021.mp4.m3u8'
             };
         </script>
     </div>
