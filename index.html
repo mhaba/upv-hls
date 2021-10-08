@@ -42,7 +42,8 @@
 
                 hls.on(Hls.Events.MEDIA_ATTACHED, function () {
                     console.log('video and hls.js are now bound together !');
-                    hls.loadSource('https://moneres.upv.es/hls-vod/tv/videos-web/presentacion-upv-2021.mp4.m3u8')
+                    //hls.loadSource('https://moneres.upv.es/hls-vod/tv/videos-web/presentacion-upv-2021.mp4.m3u8')
+                    hls.loadSource('https://streaming.upv.es/upvrtv/_definst_/mp4:tv/actualidad-en-la-upv/2021-05-28-actualidad-en-la-upv-64782.mp4/playlist.m3u8')
                 });
             }
             else if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent) && !window.MSStream) {                
